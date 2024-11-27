@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Classifier - Result</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">SkinDx</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+
+    <div class="result-main-section">
+        <div class="background-anim"></div>
+
+        <div class="container">
+            <div class="result-content">
+                <h1 class="result-title animated-title">Prediction Result</h1>
+                <p class="subheading">The skin condition detected in the image is:</p>
+                
+                <div id="prediction-result" class="result-text">
+                    <h2>{{ prediction }}</h2>
+                </div>
+
+                <button class="back-button" onclick="window.location.href='/'">Back to Home</button>
+
+
+                <div id="loading-bar" class="loading-bar" style="display:none;">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function () {
+        setTimeout(function () {
+            document.getElementById('loading-bar').style.display = 'none';
+            document.getElementById('prediction-result').style.display = 'block';
+        }, 2000); 
+    }
+</script>
+</html>
